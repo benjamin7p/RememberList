@@ -17,6 +17,7 @@
 		9A091CAA21E3C3850007F332 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A091CA921E3C3850007F332 /* ListTableViewController.swift */; };
 		9A091CAE21E3C8020007F332 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A091CAD21E3C8020007F332 /* DetailViewController.swift */; };
 		9A62F90621E513630085F675 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62F90521E513630085F675 /* ListModel.swift */; };
+		9A72B2AB21E7950600099082 /* RememberNoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72B2AA21E7950600099082 /* RememberNoteManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		9A091CA921E3C3850007F332 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		9A091CAD21E3C8020007F332 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9A62F90521E513630085F675 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		9A72B2AA21E7950600099082 /* RememberNoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberNoteManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				9A091C7C21E3BCB90007F332 /* Main.storyboard */,
 				9A091CA921E3C3850007F332 /* ListTableViewController.swift */,
 				9A62F90521E513630085F675 /* ListModel.swift */,
+				9A72B2AA21E7950600099082 /* RememberNoteManager.swift */,
 				9A091C8221E3BCBB0007F332 /* Assets.xcassets */,
 				9A091C8421E3BCBB0007F332 /* LaunchScreen.storyboard */,
 				9A091C8721E3BCBB0007F332 /* Info.plist */,
@@ -267,6 +270,7 @@
 			files = (
 				9A091C8121E3BCB90007F332 /* RememberList.xcdatamodeld in Sources */,
 				9A091C7921E3BCB90007F332 /* AppDelegate.swift in Sources */,
+				9A72B2AB21E7950600099082 /* RememberNoteManager.swift in Sources */,
 				9A091CAA21E3C3850007F332 /* ListTableViewController.swift in Sources */,
 				9A091CAE21E3C8020007F332 /* DetailViewController.swift in Sources */,
 				9A62F90621E513630085F675 /* ListModel.swift in Sources */,

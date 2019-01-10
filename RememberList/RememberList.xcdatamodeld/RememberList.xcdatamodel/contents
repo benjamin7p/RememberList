@@ -3,7 +3,11 @@
     <entity name="List" representedClassName="List" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="RememberNote" representedClassName="RememberNote" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="List" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="RememberNote" positionX="-63" positionY="-9" width="128" height="60"/>
     </elements>
 </model>

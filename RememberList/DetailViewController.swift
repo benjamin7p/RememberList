@@ -11,20 +11,25 @@ import CoreData
 
 class DetailViewController: UIViewController {
     
-    var listItem: List?
+    var rememberNoteManager: RememberNoteManager?
     
     
-    
+    var delegate: RememberNoteDelegate?
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        let listModel = ListModel(appDelegate: UIApplication.shared.delegate as! AppDelegate)
-        listModel.createList(name: nameTextField!.text!)
-        listModel.saveList()
+        
+        if let text = nameTextField.text {
+            delegate?.saveText(text: text)
+            
+        }
+        
+        //RememberNoteDelegate.save()
+        
         // go back
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     
@@ -32,8 +37,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         
-        
     }
+    
     
 
     /*
@@ -46,4 +51,9 @@ class DetailViewController: UIViewController {
     }
     */
 
+}
+protocol RememberNoteDelegate {
+    func saveText(text: String)
+    
+    
 }

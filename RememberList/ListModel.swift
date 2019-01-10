@@ -31,6 +31,9 @@ class ListModel {
     func saveList() {
         appDelegate.saveContext()
     }
+    func delete(listItemToDelete: List) {
+        
+    }
 }
 
 // let list = name(context: contextHelper(app deleget method) .context)

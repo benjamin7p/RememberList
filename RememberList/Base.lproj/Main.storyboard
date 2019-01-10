@@ -37,7 +37,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xbN-aX-cNZ">
                             <connections>
                                 <action selector="addButton:" destination="haW-yB-NcN" id="Xbb-sg-BOC"/>
-                                <segue destination="0B6-1r-WMn" kind="presentation" id="TG2-s0-meC"/>
+                                <segue destination="Nj4-Vu-c8i" kind="show" id="1G1-b3-2fm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -54,16 +54,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5RV-lt-3HU">
-                                <rect key="frame" x="139" y="162" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5RV-lt-3HU">
+                                <rect key="frame" x="0.0" y="162" width="375" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3D-YM-ryZ">
-                                <rect key="frame" x="170" y="318" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3D-YM-ryZ">
+                                <rect key="frame" x="0.0" y="318" width="375" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="Nj4-Vu-c8i" eventType="touchUpInside" id="CbV-0r-bhs"/>
@@ -71,6 +69,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="P3D-YM-ryZ" firstAttribute="leading" secondItem="EFd-h9-Imo" secondAttribute="leading" id="9QE-4f-Y0C"/>
+                            <constraint firstItem="5RV-lt-3HU" firstAttribute="leading" secondItem="EFd-h9-Imo" secondAttribute="leading" id="Rub-7d-R32"/>
+                            <constraint firstItem="5RV-lt-3HU" firstAttribute="top" secondItem="EFd-h9-Imo" secondAttribute="top" constant="98" id="aKl-92-4Yh"/>
+                            <constraint firstItem="EFd-h9-Imo" firstAttribute="trailing" secondItem="5RV-lt-3HU" secondAttribute="trailing" id="hTY-B2-M2p"/>
+                            <constraint firstItem="EFd-h9-Imo" firstAttribute="trailing" secondItem="P3D-YM-ryZ" secondAttribute="trailing" id="j0N-7E-Gix"/>
+                            <constraint firstItem="P3D-YM-ryZ" firstAttribute="top" secondItem="5RV-lt-3HU" secondAttribute="bottom" constant="126" id="vtf-M3-IZo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EFd-h9-Imo"/>
                     </view>
                     <navigationItem key="navigationItem" id="rce-Np-TiP"/>
@@ -81,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCp-Fg-bIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3639" y="90"/>
+            <point key="canvasLocation" x="2711" y="90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JSm-Zd-lAw">
@@ -100,24 +106,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FjT-ib-9WX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1024.8" y="89.505247376311857"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="GOo-0h-Sw2">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0B6-1r-WMn" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fTH-14-Ljs">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Nj4-Vu-c8i" kind="relationship" relationship="rootViewController" id="SrE-NL-bdG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gVI-jH-dkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2802" y="90"/>
         </scene>
     </scenes>
 </document>

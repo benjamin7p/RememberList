@@ -11,23 +11,25 @@ import CoreData
 
 class ListTableViewController: UITableViewController {
     
-    let listModel = ListModel(appDelegate: UIApplication.shared.delegate as! AppDelegate)
+    let rememberNoteManager = RememberNoteManager(appDelegate: UIApplication.shared.delegate as! AppDelegate)
     
-    var list = [List]()
+    var rememberNoteList = [RememberNote]()
     
-    func loadList() -> [List] {
-        return listModel.fetchData()
+    func loadList() -> [RememberNote] {
+        return rememberNoteManager.fetchData()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        list = loadList()
+        
+        
+        rememberNoteList = loadList()
         tableView.reloadData()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return rememberNoteList.count
     }
 
     
@@ -35,33 +37,52 @@ class ListTableViewController: UITableViewController {
          let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) 
             
         
-        cell.textLabel?.text = list[indexPath.row].name
+        cell.textLabel?.text = rememberNoteList[indexPath.row].text
         
 
         return cell
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            rememberNoteList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let listItemToDelete = rememberNoteList[indexPath.row]
+            rememberNoteManager.delete(listItemToDelete: listItemToDelete)
+            rememberNoteManager.save()
+            tableView.reloadData()
+        }
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let destinationVC = segue.destination as? DetailViewController else { return }
+        destinationVC.delegate = self
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    
+}
 
+extension ListTableViewController: RememberNoteDelegate {
+    
+    func saveText(text: String) {
+        let newNoteText = rememberNoteManager.create(noteText: text)
+        rememberNoteManager.save()
+        rememberNoteList = rememberNoteManager.fetchData()
+        tableView.reloadData()
+    }
+    
+}
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -77,14 +98,11 @@ class ListTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
-}
+ 
+
+
